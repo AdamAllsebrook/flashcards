@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {% include '_form_input.html' with field=form.username type='text' %}
+    {% include '_form_input.html' with field=form.password type='password' %}
+    <button class="btn btn-primary">Login</button>
+    {% if error %}
+        <div class="alert alert-warning">
+            <p class="">{{ error }}</p>
+        </div>
+    {% endif %}
+</form>
+{% endblock %}
