@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {% include '_form_input.html' with field=form.username type='text' %}
+    {% include '_form_input.html' with field=form.email type='text' %}
+    {% include '_form_input.html' with field=form.password type='password' %}
+    {% include '_form_input.html' with field=form.password_confirm type='password' %}
+    <button class="btn btn-primary">Register</button>
+</form>
+{% endblock %}

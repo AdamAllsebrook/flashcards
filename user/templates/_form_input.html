@@ -1,0 +1,12 @@
+<div class="form-control w-full max-w-xs">
+    <label for="{{ field.name }}" class="label">
+        <span class="label-text">{{ field.label }}</span>
+    </label>
+    <input type="{{ type }}" name="{{ field.name }}" value="{{ field.value|default:'' }}"
+        class="input input-bordered {% if field.error_text is not None %} input-error{% endif %} w-full max-w-xs" />
+    <label class="label">
+        {% if field.error_text is not None %}
+        <span class="label-text-alt">{{ field.error_text }}</span>
+        {% endif %}
+    </label>
+</div>

@@ -11,11 +11,5 @@
         {% django_htmx_script %}
 	</head>
 
-	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
-		<div class="container mx-auto">
-			<section class="flex items-center justify-center h-screen">
-				<h1 hx-get="/hello" hx-swap="afterend" class="btn btn-primary">Django + Tailwind + HTMX = ❤️</h1>
-			</section>
-		</div>
-	</body>
+    {% block content %}{% endblock %}
 </html>
